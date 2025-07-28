@@ -1,0 +1,1336 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seniorenzentrum Hamburg - Kultursensible Pflege & Wohnen</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .hero-slider {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .slide {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        .slide.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes checkmark {
+            0% {
+                stroke-dashoffset: 50;
+            }
+            100% {
+                stroke-dashoffset: 0;
+            }
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #14b8a6 0%, #0891b2 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .feature-icon {
+            background: linear-gradient(135deg, #06b6d4 0%, #14b8a6 100%);
+        }
+        
+        .contact-form {
+            background: linear-gradient(135deg, #0891b2 0%, #0f766e 100%);
+        }
+        
+        .islamic-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f0f9ff' fill-opacity='0.1'%3E%3Cpath d='M30 30c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20zm0 0c0 11.046 8.954 20 20 20s20-8.954 20-20-8.954-20-20-20-20 8.954-20 20z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="text-2xl font-bold text-teal-600">Seniorenzentrum Huzur</div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#home" class="text-gray-700 hover:text-teal-600 px-3 py-2 rounded-md text-sm font-medium transition">Startseite</a>
+                        <a href="#wohnungen" class="text-gray-700 hover:text-teal-600 px-3 py-2 rounded-md text-sm font-medium transition">Wohnungen</a>
+                        <a href="#vorteile" class="text-gray-700 hover:text-teal-600 px-3 py-2 rounded-md text-sm font-medium transition">Vorteile</a>
+                        <a href="#lage" class="text-gray-700 hover:text-teal-600 px-3 py-2 rounded-md text-sm font-medium transition">Lage</a>
+                        <a href="#kontakt" class="bg-teal-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-teal-700 transition">Kontakt</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button onclick="toggleMobileMenu()" class="text-gray-700 hover:text-teal-600">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" class="block px-3 py-2 text-gray-700 hover:text-teal-600">Startseite</a>
+                <a href="#wohnungen" class="block px-3 py-2 text-gray-700 hover:text-teal-600">Wohnungen</a>
+                <a href="#vorteile" class="block px-3 py-2 text-gray-700 hover:text-teal-600">Vorteile</a>
+                <a href="#lage" class="block px-3 py-2 text-gray-700 hover:text-teal-600">Lage</a>
+                <a href="#kontakt" class="block px-3 py-2 text-gray-700 hover:text-teal-600">Kontakt</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Image Slider -->
+    <section id="home" class="pt-16 bg-gradient-to-br from-teal-50 to-cyan-100 islamic-pattern">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 class="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
+                        Würdevolles Wohnen im <span class="text-teal-600">goldenen Lebensabschnitt</span>
+                    </h1>
+                    <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+                        Erleben Sie Geborgenheit und Würde in unserem modernen Seniorenzentrum. 
+                        Mit kultursensiblem Personal, türkischsprachiger Betreuung und tiefem Respekt 
+                        für islamische Traditionen schaffen wir ein Zuhause, das Ihre Bedürfnisse versteht.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#kontakt" class="bg-teal-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-teal-700 transition text-center">
+                            Jetzt Besichtigung vereinbaren
+                        </a>
+                        <a href="#wohnungen" class="border-2 border-teal-600 text-teal-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-teal-50 transition text-center">
+                            Wohnungen ansehen
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="hero-slider bg-white rounded-2xl shadow-2xl overflow-hidden">
+                    <div class="slide active">
+                        <div class="h-96 bg-gradient-to-br from-green-400 to-blue-500 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <svg class="w-24 h-24 mx-auto mb-4" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
+                                </svg>
+                                <p class="text-lg font-semibold">Lichtdurchflutete Wohnräume</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="h-96 bg-gradient-to-br from-purple-400 to-pink-500 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <svg class="w-24 h-24 mx-auto mb-4" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"/>
+                                </svg>
+                                <p class="text-lg font-semibold">Moderne Ausstattung</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="h-96 bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <svg class="w-24 h-24 mx-auto mb-4" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                                <p class="text-lg font-semibold">Kultursensible Betreuung</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Slider Controls -->
+                    <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                        <button onclick="currentSlide(1)" class="w-3 h-3 bg-white bg-opacity-50 rounded-full hover:bg-opacity-100 transition"></button>
+                        <button onclick="currentSlide(2)" class="w-3 h-3 bg-white bg-opacity-50 rounded-full hover:bg-opacity-100 transition"></button>
+                        <button onclick="currentSlide(3)" class="w-3 h-3 bg-white bg-opacity-50 rounded-full hover:bg-opacity-100 transition"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Apartment Detail Modal -->
+        <div id="apartmentModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+            <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+                <div class="p-6">
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 id="modalTitle" class="text-3xl font-bold text-gray-900"></h2>
+                        <button onclick="closeApartmentModal()" class="text-gray-500 hover:text-gray-700 text-2xl">×</button>
+                    </div>
+                    
+                    <div id="modalContent" class="space-y-6">
+                        <!-- Content will be populated by JavaScript -->
+                    </div>
+                    
+                    <div class="mt-8 text-center">
+                        <a href="#kontakt" onclick="closeApartmentModal()" class="bg-blue-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-blue-700 transition">
+                            Jetzt anfragen
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wohnungstypen -->
+    <section id="wohnungen" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Unsere Wohnungen</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Wählen Sie aus verschiedenen Wohnungsgrößen - von gemütlichen 1-Zimmer-Apartments 
+                    bis hin zu geräumigen 2-Zimmer-Wohnungen für Ehepaare
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 1-Zimmer Wohnung -->
+                <div class="card-hover bg-white rounded-xl shadow-lg overflow-hidden border flex flex-col">
+                    <div class="h-48 bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center">
+                        <div class="text-center text-white">
+                            <svg class="w-16 h-16 mx-auto mb-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
+                            </svg>
+                            <p class="font-semibold">1-Zimmer Apartment</p>
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">Komfort-Apartment</h3>
+                        <ul class="text-gray-600 space-y-2 mb-4">
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Lichtdurchfluteter Wohnraum</li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Moderne Küchenzeile</li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Barrierefreies Badezimmer</li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Eigener Kellerraum</li>
+                        </ul>
+                        <div class="text-teal-600 font-semibold mb-4 mt-auto">Ideal für Einzelpersonen</div>
+                        <button onclick="showApartmentDetail('1-zimmer')" class="w-full bg-teal-600 text-white px-4 py-3 rounded-lg font-semibold hover:bg-teal-700 transition h-12 flex items-center justify-center">
+                            Mehr Infos
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 2-Zimmer Wohnung -->
+                <div class="card-hover bg-white rounded-xl shadow-lg overflow-hidden border flex flex-col">
+                    <div class="h-48 bg-gradient-to-br from-green-400 to-blue-500 flex items-center justify-center">
+                        <div class="text-center text-white">
+                            <svg class="w-16 h-16 mx-auto mb-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"/>
+                            </svg>
+                            <p class="font-semibold">2-Zimmer Wohnung</p>
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">Familien-Apartment</h3>
+                        <ul class="text-gray-600 space-y-2 mb-4">
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Separates Schlafzimmer</li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Geräumiger Wohnbereich</li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Vollausgestattete Küche</li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Eigener Kellerraum</li>
+                        </ul>
+                        <div class="text-teal-600 font-semibold mb-4 mt-auto">Perfekt für Ehepaare</div>
+                        <button onclick="showApartmentDetail('2-zimmer')" class="w-full bg-teal-600 text-white px-4 py-3 rounded-lg font-semibold hover:bg-teal-700 transition h-12 flex items-center justify-center">
+                            Mehr Infos
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Dachterrassen-Wohnung -->
+                <div class="card-hover bg-white rounded-xl shadow-lg overflow-hidden border border-amber-300 flex flex-col">
+                    <div class="h-48 bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center">
+                        <div class="text-center text-white">
+                            <svg class="w-16 h-16 mx-auto mb-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 2L3 9v9a1 1 0 001 1h12a1 1 0 001-1V9l-7-7zM9 18v-6h2v6H9z" clip-rule="evenodd"/>
+                            </svg>
+                            <p class="font-semibold">Premium Dachterrasse</p>
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">Penthouse mit Terrasse</h3>
+                        <div class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm font-semibold mb-3 inline-block">
+                            ⭐ Premium
+                        </div>
+                        <ul class="text-gray-600 space-y-2 mb-4">
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Großzügige Dachterrasse</li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Komplette Glasfront</li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> 1 Zimmer + große Küchenzeile</li>
+                            <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Eigener Kellerraum</li>
+                        </ul>
+                        <div class="text-amber-600 font-semibold mb-4">Exklusives Wohnerlebnis</div>
+                        <button onclick="showApartmentDetail('penthouse')" class="w-full bg-amber-600 text-white px-4 py-3 rounded-lg font-semibold hover:bg-amber-700 transition h-12 flex items-center justify-center mt-auto">
+                            Mehr Infos
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Apartment Detail Modal -->
+    <div id="apartmentModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 id="modalTitle" class="text-3xl font-bold text-gray-900"></h2>
+                    <button onclick="closeApartmentModal()" class="text-gray-500 hover:text-gray-700 text-2xl">×</button>
+                </div>
+                
+                <div id="modalContent" class="space-y-6">
+                    <!-- Content will be populated by JavaScript -->
+                </div>
+                
+                <div class="mt-8 text-center">
+                    <a href="#kontakt" onclick="closeApartmentModal()" class="bg-blue-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-blue-700 transition">
+                        Jetzt anfragen
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Vorteile -->
+    <section id="vorteile" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Unsere besonderen Vorteile</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Wir verstehen die Bedürfnisse unserer Bewohner und bieten kultursensible Betreuung 
+                    in einer modernen, barrierefreien Umgebung
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Kultursensibilität -->
+                <div class="card-hover bg-white rounded-xl p-8 shadow-lg text-center flex flex-col">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Kultursensible Betreuung</h3>
+                    <p class="text-gray-600 mb-8 flex-grow">
+                        Freundliches Personal mit Türkischkenntnissen und Respekt für islamische Werte. 
+                        Halal-Küche verfügbar.
+                    </p>
+                    <div class="text-teal-600 font-semibold h-6 flex items-center justify-center">🕌 Islamische Werte respektiert</div>
+                </div>
+
+                <!-- Barrierefreiheit -->
+                <div class="card-hover bg-white rounded-xl p-8 shadow-lg text-center flex flex-col">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">100% Barrierefrei</h3>
+                    <p class="text-gray-600 mb-8 flex-grow">
+                        Alle Bereiche sind rollstuhlgerecht gestaltet. Aufzüge 
+                        und breite Türen für maximale Sicherheit.
+                    </p>
+                    <div class="text-teal-600 font-semibold h-6 flex items-center justify-center">♿ Vollständig zugänglich</div>
+                </div>
+
+                <!-- Lichtdurchflutet -->
+                <div class="card-hover bg-white rounded-xl p-8 shadow-lg text-center flex flex-col">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Lichtdurchflutete Räume</h3>
+                    <p class="text-gray-600 mb-8 flex-grow">
+                        Große Fenster und helle Räume sorgen für eine freundliche 
+                        Atmosphäre und natürliches Wohlbefinden.
+                    </p>
+                    <div class="text-teal-600 font-semibold h-6 flex items-center justify-center">☀️ Natürliches Licht</div>
+                </div>
+
+                <!-- Kellerräume -->
+                <div class="card-hover bg-white rounded-xl p-8 shadow-lg text-center flex flex-col">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Kellerräume</h3>
+                    <p class="text-gray-600 mb-8 flex-grow">
+                        Jede Wohnung verfügt über einen eigenen, sicheren Kellerraum 
+                        für zusätzlichen Stauraum und persönliche Gegenstände.
+                    </p>
+                    <div class="text-teal-600 font-semibold h-6 flex items-center justify-center">📦 Extra Stauraum</div>
+                </div>
+
+                <!-- Pflege -->
+                <div class="card-hover bg-white rounded-xl p-8 shadow-lg text-center flex flex-col">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Lokale Pflege</h3>
+                    <p class="text-gray-600 mb-8 flex-grow">
+                        Professionelle Pflegekräfte vor Ort, die bei Bedarf 
+                        individuelle Betreuung und medizinische Versorgung bieten.
+                    </p>
+                    <div class="text-teal-600 font-semibold h-6 flex items-center justify-center">👩‍⚕️ 24/7 Betreuung</div>
+                </div>
+
+                <!-- Gemeinschaft -->
+                <div class="card-hover bg-white rounded-xl p-8 shadow-lg text-center flex flex-col">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Warme Gemeinschaft</h3>
+                    <p class="text-gray-600 mb-8 flex-grow">
+                        Nachbarschaftliches Miteinander und gegenseitige Unterstützung 
+                        schaffen ein echtes Zuhause-Gefühl in familiärer Atmosphäre.
+                    </p>
+                    <div class="text-teal-600 font-semibold h-6 flex items-center justify-center">🤝 Zusammenhalt</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Apartment Detail Modal -->
+        <div id="apartmentModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+            <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+                <div class="p-6">
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 id="modalTitle" class="text-3xl font-bold text-gray-900"></h2>
+                        <button onclick="closeApartmentModal()" class="text-gray-500 hover:text-gray-700 text-2xl">×</button>
+                    </div>
+                    
+                    <div id="modalContent" class="space-y-6">
+                        <!-- Content will be populated by JavaScript -->
+                    </div>
+                    
+                    <div class="mt-8 text-center">
+                        <a href="#kontakt" onclick="closeApartmentModal()" class="bg-blue-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-blue-700 transition">
+                            Jetzt anfragen
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lage & Umgebung -->
+    <section id="lage" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Perfekte Lage in Hamburg</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Zentral gelegen mit ausgezeichneter Infrastruktur und allem, 
+                    was Sie für den täglichen Bedarf benötigen
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="space-y-8">
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-green-100 p-3 rounded-full">
+                                <svg class="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-900 mb-2">Supermarkt in 2 Minuten</h3>
+                                <p class="text-gray-600">
+                                    Großer Supermarkt direkt vor der Haustür - nur 2 Minuten Fußweg 
+                                    für alle täglichen Einkäufe und frische Lebensmittel.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-blue-100 p-3 rounded-full">
+                                <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-900 mb-2">Busanbindung</h3>
+                                <p class="text-gray-600">
+                                    Bushaltestelle nur 3 Minuten Fußweg entfernt - 
+                                    bequeme Verbindung zu allen wichtigen Zielen in Hamburg.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-purple-100 p-3 rounded-full">
+                                <svg class="w-6 h-6 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-900 mb-2">Apotheke</h3>
+                                <p class="text-gray-600">
+                                    Apotheke nur 2 Minuten Fußweg entfernt - 
+                                    schnelle Versorgung mit Medikamenten und Beratung.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-orange-100 p-3 rounded-full">
+                                <svg class="w-6 h-6 text-orange-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-900 mb-2">EKZ Lurup</h3>
+                                <p class="text-gray-600">
+                                    Großes Einkaufszentrum in nur 10 Minuten Entfernung - 
+                                    vielfältige Geschäfte und Dienstleistungen unter einem Dach.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-yellow-100 p-3 rounded-full">
+                                <svg class="w-6 h-6 text-yellow-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M6 3a1 1 0 011-1h.01a1 1 0 010 2H7a1 1 0 01-1-1zm2 3a1 1 0 00-2 0v1a2 2 0 00-2 2v1a2 2 0 00-2 2v.683a3.7 3.7 0 011.055.485 1.704 1.704 0 001.89 0 3.704 3.704 0 014.11 0 1.704 1.704 0 001.89 0 3.704 3.704 0 014.11 0 1.704 1.704 0 001.89 0A3.7 3.7 0 0118 12.683V12a2 2 0 00-2-2V9a2 2 0 00-2-2V6a1 1 0 10-2 0v1H8V6z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-900 mb-2">Parks & Erholung</h3>
+                                <p class="text-gray-600">
+                                    Grüne Oasen und Spazierwege in der Umgebung laden zu 
+                                    entspannten Stunden im Freien ein.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-br from-teal-50 to-cyan-100 rounded-2xl p-8">
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Unsere Adresse</h3>
+                        <p class="text-lg text-gray-600">Rugenbarg 244, 22547 Hamburg-Lurup</p>
+                    </div>
+                    
+                    <!-- Map Placeholder -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg mb-6">
+                        <div class="h-72 bg-gradient-to-br from-teal-100 to-cyan-200 flex items-center justify-center border-4 border-dashed border-red-400 relative">
+                            <div class="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold">🗺️ GOOGLE MAPS HIER EINFÜGEN</div>
+                            <div class="text-center text-teal-600">
+                                <svg class="w-16 h-16 mx-auto mb-4" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                                </svg>
+                                <h3 class="text-lg font-semibold mb-2">GOOGLE MAPS KARTE</h3>
+                                <p class="text-sm text-teal-500 font-bold">Rugenbarg 244, 22547 Hamburg-Lurup</p>
+                                <p class="text-xs text-red-600 mt-2 font-bold bg-white px-2 py-1 rounded">⬆️ INTERAKTIVE KARTE HIER EINBETTEN ⬆️</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Quick Info Grid -->
+                    <div class="grid grid-cols-2 gap-4 text-sm">
+                        <div class="bg-white rounded-lg p-4">
+                            <div class="font-semibold text-gray-900">🛒 Supermarkt</div>
+                            <div class="text-gray-600">2 Min. Fußweg</div>
+                        </div>
+                        <div class="bg-white rounded-lg p-4">
+                            <div class="font-semibold text-gray-900">🚌 Bus</div>
+                            <div class="text-gray-600">3 Min. Fußweg</div>
+                        </div>
+                        <div class="bg-white rounded-lg p-4">
+                            <div class="font-semibold text-gray-900">💊 Apotheke</div>
+                            <div class="text-gray-600">2 Min. Fußweg</div>
+                        </div>
+                        <div class="bg-white rounded-lg p-4">
+                            <div class="font-semibold text-gray-900">🏬 EKZ Lurup</div>
+                            <div class="text-gray-600">10 Min. Fahrt</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Address and Directions -->
+                    <div class="mt-6 text-center">
+                        <a href="https://www.google.com/maps/dir//Rugenbarg+244,+22547+Hamburg" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           class="inline-flex items-center bg-teal-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-teal-700 transition">
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                            </svg>
+                            Route planen
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Apartment Detail Modal -->
+        <div id="apartmentModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+            <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+                <div class="p-6">
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 id="modalTitle" class="text-3xl font-bold text-gray-900"></h2>
+                        <button onclick="closeApartmentModal()" class="text-gray-500 hover:text-gray-700 text-2xl">×</button>
+                    </div>
+                    
+                    <div id="modalContent" class="space-y-6">
+                        <!-- Content will be populated by JavaScript -->
+                    </div>
+                    
+                    <div class="mt-8 text-center">
+                        <a href="#kontakt" onclick="closeApartmentModal()" class="bg-blue-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-blue-700 transition">
+                            Jetzt anfragen
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontaktformular -->
+    <section id="kontakt" class="py-20 bg-gradient-to-br from-teal-600 to-cyan-700">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-white mb-4">Interesse geweckt?</h2>
+                <p class="text-xl text-teal-100 max-w-2xl mx-auto">
+                    Kontaktieren Sie uns für eine unverbindliche Besichtigung und 
+                    erfahren Sie mehr über unsere verfügbaren Wohnungen
+                </p>
+            </div>
+            
+            <div class="bg-white rounded-2xl shadow-2xl p-8">
+                <form action="https://formspree.io/f/meozanow" method="POST" id="contactForm" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="firstName" class="block text-sm font-medium text-gray-700 mb-2">Vorname *</label>
+                            <input type="text" id="firstName" name="firstName" required 
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition">
+                        </div>
+                        <div>
+                            <label for="lastName" class="block text-sm font-medium text-gray-700 mb-2">Nachname *</label>
+                            <input type="text" id="lastName" name="lastName" required 
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition">
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">E-Mail *</label>
+                            <input type="email" id="email" name="email" required 
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition">
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Telefonnummer *</label>
+                            <input type="tel" id="phone" name="phone" required 
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition">
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="seniorCount" class="block text-sm font-medium text-gray-700 mb-2">Anzahl der Senioren *</label>
+                            <select id="seniorCount" name="seniorCount" required 
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition">
+                                <option value="" disabled selected>Bitte wählen</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="Mehr als 2">Mehr als 2</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="seniorAge" class="block text-sm font-medium text-gray-700 mb-2">Alter der Senioren</label>
+                            <input type="text" id="seniorAge" name="seniorAge" placeholder="z.B. 75 Jahre oder 72 und 68 Jahre" 
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition">
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="moveInDate" class="block text-sm font-medium text-gray-700 mb-2">Gewünschtes Einzugsdatum</label>
+                            <input type="date" id="moveInDate" name="moveInDate" 
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition">
+                        </div>
+                        <div>
+                            <label for="apartmentType" class="block text-sm font-medium text-gray-700 mb-2">Gewünschte Wohnung *</label>
+                            <select id="apartmentType" name="apartmentType" required 
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition">
+                                <option value="" disabled selected>Bitte wählen</option>
+                                <option value="Einzelwohnung">Einzelwohnung</option>
+                                <option value="Doppelwohnung">Doppelwohnung</option>
+                                <option value="Barrierefrei">Barrierefrei</option>
+                                <option value="Pflegezimmer">Pflegezimmer</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label for="specialNeeds" class="block text-sm font-medium text-gray-700 mb-2">Besondere Bedürfnisse / Situation</label>
+                        <textarea id="specialNeeds" name="specialNeeds" rows="4" 
+                                  placeholder="z. B. Krankheiten, kulturelle Ansprüche, Pflegebedarf etc."
+                                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition"></textarea>
+                    </div>
+                    
+                    <div>
+                        <label for="additionalWishes" class="block text-sm font-medium text-gray-700 mb-2">Sonstige Wünsche</label>
+                        <textarea id="additionalWishes" name="additionalWishes" rows="3" 
+                                  placeholder="Weitere Anmerkungen oder spezielle Wünsche..."
+                                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition"></textarea>
+                    </div>
+                    
+                    <div class="flex items-start space-x-3">
+                        <input type="checkbox" id="privacyConsent" name="privacyConsent" required 
+                               class="mt-1 h-4 w-4 text-teal-600 focus:ring-teal-500 border-gray-300 rounded">
+                        <label for="privacyConsent" class="text-sm text-gray-700">
+                            Ich stimme der Verarbeitung meiner Daten gemäß der <button type="button" onclick="showLegalModal('datenschutz')" class="text-teal-600 hover:text-teal-800 underline">Datenschutzerklärung</button> zu. *
+                        </label>
+                    </div>
+                    
+                    <input type="hidden" name="_next" value="javascript:void(0)">
+                    
+                    <div class="text-center">
+                        <button type="submit" id="submitBtn"
+                                class="bg-teal-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-teal-700 transition transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed">
+                            <span id="submitText">Anfrage senden & Besichtigung vereinbaren</span>
+                            <span id="loadingText" class="hidden">
+                                <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                </svg>
+                                Wird gesendet...
+                            </span>
+                        </button>
+                    </div>
+                </form>
+                
+                <!-- Success Animation Modal -->
+                <div id="successModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+                    <div class="bg-white rounded-2xl p-8 max-w-md w-full text-center transform scale-95 transition-transform duration-300" id="successContent">
+                        <div class="mb-6">
+                            <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <svg id="checkmark" class="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-2">Danke für Ihr Interesse!</h3>
+                            <p class="text-gray-600">Ihre Anfrage wird von unserem Team in Kürze bearbeitet.</p>
+                        </div>
+                        <button onclick="closeSuccessModal()" class="bg-teal-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-teal-700 transition">
+                            Schließen
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+
+        </div>
+        
+        <!-- Apartment Detail Modal -->
+        <div id="apartmentModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+            <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+                <div class="p-6">
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 id="modalTitle" class="text-3xl font-bold text-gray-900"></h2>
+                        <button onclick="closeApartmentModal()" class="text-gray-500 hover:text-gray-700 text-2xl">×</button>
+                    </div>
+                    
+                    <div id="modalContent" class="space-y-6">
+                        <!-- Content will be populated by JavaScript -->
+                    </div>
+                    
+                    <div class="mt-8 text-center">
+                        <a href="#kontakt" onclick="closeApartmentModal()" class="bg-blue-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-blue-700 transition">
+                            Jetzt anfragen
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Main Footer Content -->
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
+                <div class="mb-4 md:mb-0">
+                    <div class="text-xl font-bold text-gray-900 mb-2">Seniorenzentrum Huzur</div>
+                    <p class="text-gray-600 text-sm max-w-md">
+                        Kultursensible Betreuung und würdevolles Wohnen im Herzen Hamburgs.
+                    </p>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row gap-6 text-sm text-gray-600">
+                    <div class="flex items-center gap-2">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                        </svg>
+                        <span>+49 (0) 40 123 456 789</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                        </svg>
+                        <span>info@seniorenzentrum-hamburg.de</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bottom Bar -->
+            <div class="border-t border-gray-200 pt-6">
+                <div class="flex flex-col sm:flex-row justify-between items-center text-sm text-gray-500">
+                    <p>&copy; 2024 Seniorenzentrum Huzur. Alle Rechte vorbehalten.</p>
+                    <div class="flex gap-6 mt-3 sm:mt-0">
+                        <button onclick="showLegalModal('impressum')" class="hover:text-gray-700 transition cursor-pointer">Impressum</button>
+                        <button onclick="showLegalModal('datenschutz')" class="hover:text-gray-700 transition cursor-pointer">Datenschutz</button>
+                        <button onclick="showLegalModal('agb')" class="hover:text-gray-700 transition cursor-pointer">AGB</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Legal Modal -->
+    <div id="legalModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 id="legalModalTitle" class="text-3xl font-bold text-gray-900"></h2>
+                    <button onclick="closeLegalModal()" class="text-gray-500 hover:text-gray-700 text-2xl">×</button>
+                </div>
+                
+                <div id="legalModalContent" class="prose max-w-none text-gray-700 leading-relaxed">
+                    <!-- Content will be populated by JavaScript -->
+                </div>
+                
+                <div class="mt-8 text-center">
+                    <button onclick="closeLegalModal()" class="bg-blue-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-blue-700 transition">
+                        Schließen
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        // Image Slider
+        let slideIndex = 1;
+        showSlide(slideIndex);
+
+        function currentSlide(n) {
+            showSlide(slideIndex = n);
+        }
+
+        function showSlide(n) {
+            const slides = document.querySelectorAll('.slide');
+            const dots = document.querySelectorAll('.hero-slider button');
+            
+            if (n > slides.length) { slideIndex = 1; }
+            if (n < 1) { slideIndex = slides.length; }
+            
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('bg-opacity-100'));
+            
+            slides[slideIndex - 1].classList.add('active');
+            dots[slideIndex - 1].classList.add('bg-opacity-100');
+        }
+
+        // Auto-advance slides
+        setInterval(() => {
+            slideIndex++;
+            showSlide(slideIndex);
+        }, 5000);
+
+        // Apartment Detail Modal Functions
+        function showApartmentDetail(type) {
+            const modal = document.getElementById('apartmentModal');
+            const title = document.getElementById('modalTitle');
+            const content = document.getElementById('modalContent');
+            
+            const apartmentData = {
+                '1-zimmer': {
+                    title: 'Komfort 1-Zimmer Apartment',
+                    description: 'Perfekt für Einzelpersonen - modern, hell und barrierefrei ausgestattet.',
+                    features: [
+                        'Lichtdurchfluteter Wohnraum',
+                        'Moderne Küchenzeile mit Elektrogeräten',
+                        'Barrierefreies Badezimmer mit Dusche',
+                        'Eigener Kellerraum für zusätzlichen Stauraum',
+                        'Große Fenster für natürliches Licht'
+                    ]
+                },
+                '2-zimmer': {
+                    title: 'Geräumige 2-Zimmer Wohnung',
+                    description: 'Ideal für Ehepaare - mit separatem Schlafzimmer und großzügigem Wohnbereich.',
+                    features: [
+                        'Separates Schlafzimmer',
+                        'Geräumiger Wohnbereich',
+                        'Vollausgestattete Küche mit Essbereich',
+                        'Barrierefreies Badezimmer mit Dusche',
+                        'Eigener Kellerraum'
+                    ]
+                },
+                'penthouse': {
+                    title: 'Premium Penthouse mit Dachterrasse',
+                    description: 'Exklusives Wohnen mit großer Dachterrasse und kompletter Glasfront.',
+                    features: [
+                        'Großzügiger Wohnraum',
+                        'Große Küchenzeile mit Premium-Ausstattung',
+                        'Komplette Glasfront für maximales Licht',
+                        'Private Dachterrasse',
+                        'Barrierefreies Designer-Badezimmer',
+                        'Eigener Kellerraum',
+                        'Exklusive Ausstattung und Materialien'
+                    ]
+                }
+            };
+            
+            const data = apartmentData[type];
+            title.textContent = data.title;
+            
+            content.innerHTML = `
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">Bildergalerie</h3>
+                        <div class="space-y-4">
+                            <div class="bg-gray-100 rounded-lg p-8 text-center border-2 border-dashed border-gray-300">
+                                <svg class="w-16 h-16 mx-auto text-gray-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                </svg>
+                                <p class="text-gray-500">Hauptbild der Wohnung</p>
+                                <p class="text-sm text-gray-400 mt-2">(Bild wird hier eingefügt)</p>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="bg-gray-100 rounded-lg p-4 text-center border-2 border-dashed border-gray-300">
+                                    <svg class="w-8 h-8 mx-auto text-gray-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                    </svg>
+                                    <p class="text-xs text-gray-500">Küche</p>
+                                </div>
+                                <div class="bg-gray-100 rounded-lg p-4 text-center border-2 border-dashed border-gray-300">
+                                    <svg class="w-8 h-8 mx-auto text-gray-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                    </svg>
+                                    <p class="text-xs text-gray-500">Badezimmer</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">Beschreibung</h3>
+                        <p class="text-gray-600 mb-6">${data.description}</p>
+                        
+                        <h4 class="text-lg font-semibold text-gray-900 mb-3">Ausstattung & Features</h4>
+                        <ul class="space-y-2 mb-6">
+                            ${data.features.map(feature => `
+                                <li class="flex items-start">
+                                    <span class="text-green-500 mr-2 mt-1">✓</span>
+                                    <span class="text-gray-600">${feature}</span>
+                                </li>
+                            `).join('')}
+                        </ul>
+                        
+
+                    </div>
+                </div>
+            `;
+            
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeApartmentModal() {
+            const modal = document.getElementById('apartmentModal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('apartmentModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeApartmentModal();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeApartmentModal();
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Form submission handling
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const submitText = document.getElementById('submitText');
+            const loadingText = document.getElementById('loadingText');
+            
+            // Show loading state
+            submitBtn.disabled = true;
+            submitText.classList.add('hidden');
+            loadingText.classList.remove('hidden');
+            
+            try {
+                const formData = new FormData(this);
+                const response = await fetch(this.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    // Show success animation
+                    showSuccessModal();
+                    // Reset form
+                    this.reset();
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            } catch (error) {
+                alert('Es gab einen Fehler beim Senden der Anfrage. Bitte versuchen Sie es erneut.');
+            } finally {
+                // Reset button state
+                submitBtn.disabled = false;
+                submitText.classList.remove('hidden');
+                loadingText.classList.add('hidden');
+            }
+        });
+
+        function showSuccessModal() {
+            const modal = document.getElementById('successModal');
+            const content = document.getElementById('successContent');
+            const checkmark = document.getElementById('checkmark');
+            
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            
+            // Animate modal appearance
+            setTimeout(() => {
+                content.style.transform = 'scale(1)';
+            }, 50);
+            
+            // Animate checkmark
+            setTimeout(() => {
+                checkmark.style.strokeDasharray = '50';
+                checkmark.style.strokeDashoffset = '50';
+                checkmark.style.animation = 'checkmark 0.6s ease-in-out forwards';
+            }, 300);
+        }
+
+        function closeSuccessModal() {
+            const modal = document.getElementById('successModal');
+            const content = document.getElementById('successContent');
+            
+            content.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }, 200);
+        }
+
+        // Set minimum date for move-in date to today
+        document.getElementById('moveInDate').min = new Date().toISOString().split('T')[0];
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.05,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Function to add animation to elements
+        function addScrollAnimation(selector, delay = 0) {
+            document.querySelectorAll(selector).forEach((element, index) => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = `opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1) ${delay + (index * 0.05)}s, transform 0.4s cubic-bezier(0.4, 0, 0.2, 1) ${delay + (index * 0.05)}s`;
+                observer.observe(element);
+            });
+        }
+
+        // Apply animations to different elements
+        addScrollAnimation('.card-hover', 0);
+        addScrollAnimation('section h2', 0.2);
+        addScrollAnimation('section p', 0.3);
+        addScrollAnimation('.feature-icon', 0.1);
+        
+        // Animate location features
+        addScrollAnimation('#lage .flex.items-start', 0.1);
+
+        // Legal Modal Functions
+        function showLegalModal(type) {
+            const modal = document.getElementById('legalModal');
+            const title = document.getElementById('legalModalTitle');
+            const content = document.getElementById('legalModalContent');
+            
+            const legalData = {
+                'impressum': {
+                    title: 'Impressum',
+                    content: `
+                        <h3 class="text-xl font-semibold mb-4">Angaben gemäß § 5 TMG</h3>
+                        <div class="mb-6">
+                            <strong>Seniorenzentrum Huzur GmbH</strong><br>
+                            Musterstraße 123<br>
+                            20095 Hamburg<br>
+                            Deutschland
+                        </div>
+                        
+                        <h4 class="text-lg font-semibold mb-3">Vertreten durch:</h4>
+                        <div class="mb-6">
+                            <strong>Dr. Mustafa Yoldas</strong><br>
+                            Geschäftsführer
+                        </div>
+                        
+                        <h4 class="text-lg font-semibold mb-3">Kontakt:</h4>
+                        <div class="mb-6">
+                            Telefon: +49 (0) 40 123 456 789<br>
+                            E-Mail: info@seniorenzentrum-hamburg.de<br>
+                            Website: www.seniorenzentrum-hamburg.de
+                        </div>
+                        
+                        <h4 class="text-lg font-semibold mb-3">Registereintrag:</h4>
+                        <div class="mb-6">
+                            Eintragung im Handelsregister<br>
+                            Registergericht: Amtsgericht Hamburg<br>
+                            Registernummer: HRB 123456
+                        </div>
+                        
+                        <h4 class="text-lg font-semibold mb-3">Umsatzsteuer-ID:</h4>
+                        <div class="mb-6">
+                            Umsatzsteuer-Identifikationsnummer gemäß §27 a Umsatzsteuergesetz:<br>
+                            DE123456789
+                        </div>
+                        
+                        <h4 class="text-lg font-semibold mb-3">Aufsichtsbehörde:</h4>
+                        <div class="mb-6">
+                            Behörde für Gesundheit und Verbraucherschutz Hamburg<br>
+                            Billstraße 80<br>
+                            20539 Hamburg
+                        </div>
+                        
+                        <h4 class="text-lg font-semibold mb-3">Berufsbezeichnung und berufsrechtliche Regelungen:</h4>
+                        <div class="mb-6">
+                            Berufsbezeichnung: Betreiber von Seniorenwohneinrichtungen<br>
+                            Zuständige Kammer: Handelskammer Hamburg<br>
+                            Verliehen durch: Deutschland<br>
+                            Es gelten folgende berufsrechtliche Regelungen: Heimgesetz, Wohn- und Betreuungsvertragsgesetz (WBVG)
+                        </div>
+                        
+                        <h4 class="text-lg font-semibold mb-3">Redaktionell Verantwortlicher:</h4>
+                        <div class="mb-6">
+                            Dr. Mustafa Yoldas<br>
+                            Musterstraße 123<br>
+                            20095 Hamburg
+                        </div>
+                        
+                        <h4 class="text-lg font-semibold mb-3">EU-Streitschlichtung:</h4>
+                        <div class="mb-6">
+                            Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:<br>
+                            <a href="https://ec.europa.eu/consumers/odr/" class="text-blue-600 hover:text-blue-800 underline">https://ec.europa.eu/consumers/odr/</a><br>
+                            Unsere E-Mail-Adresse finden Sie oben im Impressum.
+                        </div>
+                        
+                        <h4 class="text-lg font-semibold mb-3">Verbraucherstreitbeilegung/Universalschlichtungsstelle:</h4>
+                        <div class="mb-6">
+                            Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
+                        </div>
+                    `
+                },
+                'datenschutz': {
+                    title: 'Datenschutzerklärung',
+                    content: `
+                        <h3 class="text-xl font-semibold mb-4">1. Datenschutz auf einen Blick</h3>
+                        
+                        <h4 class="text-lg font-semibold mb-3">Allgemeine Hinweise</h4>
+                        <p class="mb-4">Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können. Ausführliche Informationen zum Thema Datenschutz entnehmen Sie unserer unter diesem Text aufgeführten Datenschutzerklärung.</p>
+                        
+                        <h4 class="text-lg font-semibold mb-3">Datenerfassung auf dieser Website</h4>
+                        <p class="mb-4"><strong>Wer ist verantwortlich für die Datenerfassung auf dieser Website?</strong></p>
+                        <p class="mb-4">Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten können Sie dem Abschnitt „Hinweis zur Verantwortlichen Stelle" in dieser Datenschutzerklärung entnehmen.</p>
+                        
+                        <p class="mb-4"><strong>Wie erfassen wir Ihre Daten?</strong></p>
+                        <p class="mb-4">Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen. Hierbei kann es sich z. B. um Daten handeln, die Sie in ein Kontaktformular eingeben.</p>
+                        
+                        <h3 class="text-xl font-semibold mb-4 mt-8">2. Hosting</h3>
+                        <p class="mb-4">Wir hosten die Inhalte unserer Website bei folgendem Anbieter:</p>
+                        
+                        <h4 class="text-lg font-semibold mb-3">Externes Hosting</h4>
+                        <p class="mb-4">Diese Website wird extern gehostet. Die personenbezogenen Daten, die auf dieser Website erfasst werden, werden auf den Servern des Hosters / der Hoster gespeichert. Hierbei kann es sich v. a. um IP-Adressen, Kontaktanfragen, Meta- und Kommunikationsdaten, Vertragsdaten, Kontaktdaten, Namen, Websitezugriffe und sonstige Daten, die über eine Website generiert werden, handeln.</p>
+                        
+                        <h3 class="text-xl font-semibold mb-4 mt-8">3. Allgemeine Hinweise und Pflichtinformationen</h3>
+                        
+                        <h4 class="text-lg font-semibold mb-3">Datenschutz</h4>
+                        <p class="mb-4">Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend den gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.</p>
+                        
+                        <h4 class="text-lg font-semibold mb-3">Hinweis zur verantwortlichen Stelle</h4>
+                        <p class="mb-4">Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:</p>
+                        <div class="mb-4">
+                            <strong>Seniorenzentrum Huzur GmbH</strong><br>
+                            Dr. Mustafa Yoldas<br>
+                            Musterstraße 123<br>
+                            20095 Hamburg<br>
+                            Telefon: +49 (0) 40 123 456 789<br>
+                            E-Mail: info@seniorenzentrum-hamburg.de
+                        </div>
+                        
+                        <h4 class="text-lg font-semibold mb-3">Speicherdauer</h4>
+                        <p class="mb-4">Soweit innerhalb dieser Datenschutzerklärung keine speziellere Speicherdauer genannt wurde, verbleiben Ihre personenbezogenen Daten bei uns, bis der Zweck für die Datenverarbeitung entfällt. Wenn Sie ein berechtigtes Löschersuchen geltend machen oder eine Einwilligung zur Datenverarbeitung widerrufen, werden Ihre Daten gelöscht, sofern wir keine anderen rechtlich zulässigen Gründe für die Speicherung Ihrer personenbezogenen Daten haben.</p>
+                        
+                        <h3 class="text-xl font-semibold mb-4 mt-8">4. Datenerfassung auf dieser Website</h3>
+                        
+                        <h4 class="text-lg font-semibold mb-3">Kontaktformular</h4>
+                        <p class="mb-4">Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.</p>
+                        
+                        <p class="mb-4">Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erfüllung eines Vertrags zusammenhängt oder zur Durchführung vorvertraglicher Maßnahmen erforderlich ist. In allen übrigen Fällen beruht die Verarbeitung auf unserem berechtigten Interesse an der effektiven Bearbeitung der an uns gerichteten Anfragen (Art. 6 Abs. 1 lit. f DSGVO) oder auf Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) sofern diese abgefragt wurde.</p>
+                        
+                        <h3 class="text-xl font-semibel mb-4 mt-8">5. Ihre Rechte</h3>
+                        <p class="mb-4">Sie haben jederzeit das Recht:</p>
+                        <ul class="list-disc list-inside mb-4 space-y-2">
+                            <li>Auskunft über Ihre bei uns gespeicherten personenbezogenen Daten und deren Verarbeitung zu verlangen</li>
+                            <li>Berichtigung unrichtiger personenbezogener Daten zu verlangen</li>
+                            <li>Löschung Ihrer bei uns gespeicherten personenbezogenen Daten zu verlangen</li>
+                            <li>Einschränkung der Datenverarbeitung zu verlangen</li>
+                            <li>Widerspruch gegen die Verarbeitung Ihrer Daten bei uns einzulegen</li>
+                            <li>Datenübertragbarkeit zu verlangen</li>
+                        </ul>
+                        
+                        <p class="mb-4">Wenn Sie Fragen zum Datenschutz haben, schreiben Sie uns bitte eine E-Mail oder wenden Sie sich direkt an die für den Datenschutz verantwortliche Person in unserer Organisation:</p>
+                        <div class="mb-4">
+                            <strong>Datenschutzbeauftragter:</strong><br>
+                            Dr. Mustafa Yoldas<br>
+                            E-Mail: datenschutz@seniorenzentrum-hamburg.de
+                        </div>
+                    `
+                },
+                'agb': {
+                    title: 'Allgemeine Geschäftsbedingungen (AGB)',
+                    content: `
+                        <h3 class="text-xl font-semibold mb-4">§ 1 Geltungsbereich</h3>
+                        <p class="mb-4">Diese Allgemeinen Geschäftsbedingungen (nachfolgend "AGB") gelten für alle Verträge zwischen der Seniorenzentrum Huzur GmbH (nachfolgend "Betreiber") und den Bewohnern bzw. deren gesetzlichen Vertretern (nachfolgend "Bewohner") über die Überlassung von Wohnraum und die Erbringung von Betreuungs- und Pflegeleistungen.</p>
+                        
+                        <h3 class="text-xl font-semibold mb-4 mt-8">§ 2 Vertragsgegenstand</h3>
+                        <p class="mb-4">Der Betreiber stellt dem Bewohner Wohnraum zur Verfügung und erbringt je nach Bedarf Betreuungs-, Verpflegungs- und Pflegeleistungen. Die konkreten Leistungen werden im individuellen Wohn- und Betreuungsvertrag festgelegt.</p>
+                        
+                        <h3 class="text-xl font-semibel mb-4 mt-8">§ 3 Vertragsschluss</h3>
+                        <p class="mb-4">Der Vertrag kommt durch die Unterzeichnung des Wohn- und Betreuungsvertrags durch beide Parteien zustande. Vor Vertragsschluss erfolgt eine umfassende Beratung über die verfügbaren Leistungen und deren Kosten.</p>
+                        
+                        <h3 class="text-xl font-semibold mb-4 mt-8">§ 4 Leistungen des Betreibers</h3>
+                        <h4 class="text-lg font-semibold mb-3">4.1 Wohnraumüberlassung</h4>
+                        <p class="mb-4">Der Betreiber stellt dem Bewohner einen möblierten oder unmöblierten Wohnraum zur Verfügung. Die Ausstattung wird im Einzelvertrag spezifiziert.</p>
+                        
+                        <h4 class="text-lg font-semibold mb-3">4.2 Betreuungsleistungen</h4>
+                        <p class="mb-4">Je nach Bedarf werden folgende Betreuungsleistungen angeboten:</p>
+                        <ul class="list-disc list-inside mb-4 space-y-2">
+                            <li>Kultursensible Betreuung mit türkischsprachigem Personal</li>
+                            <li>Unterstützung bei der Alltagsgestaltung</li>
+                            <li>Soziale Betreuung und Aktivitäten</li>
+                            <li>Vermittlung externer Dienstleister</li>
+                        </ul>
+                        
+                        <h4 class="text-lg font-semibold mb-3">4.3 Verpflegung</h4>
+                        <p class="mb-4">Auf Wunsch wird eine vollwertige Verpflegung angeboten, die kulturelle und religiöse Besonderheiten berücksichtigt (Halal-Küche verfügbar).</p>
+                        
+                        <h3 class="text-xl font-semibold mb-4 mt-8">§ 5 Pflichten des Bewohners</h3>
+                        <p class="mb-4">Der Bewohner verpflichtet sich:</p>
+                        <ul class="list-disc list-inside mb-4 space-y-2">
+                            <li>Die vereinbarten Entgelte pünktlich zu zahlen</li>
+                            <li>Die Hausordnung einzuhalten</li>
+                            <li>Änderungen der persönlichen Verhältnisse unverzüglich mitzuteilen</li>
+                            <li>Den Wohnraum pfleglich zu behandeln</li>
+                            <li>Andere Bewohner und das Personal zu respektieren</li>
+                        </ul>
+                        
+                        <h3 class="text-xl font-semibold mb-4 mt-8">§ 6 Entgelte und Zahlungsbedingungen</h3>
+                        <p class="mb-4">Die Entgelte setzen sich zusammen aus:</p>
+                        <ul class="list-disc list-inside mb-4 space-y-2">
+                            <li>Grundentgelt für Wohnraum und Grundbetreuung</li>
+                            <li>Entgelt für zusätzliche Betreuungsleistungen</li>
+                            <li>Verpflegungsentgelt (falls vereinbart)</li>
+                            <li>Investitionskosten</li>
+                        </ul>
+                        <p class="mb-4">Die Entgelte sind monatlich im Voraus bis zum 3. Werktag des Monats zu zahlen.</p>
+                        
+                        <h3 class="text-xl font-semibold mb-4 mt-8">§ 7 Kündigung</h3>
+                        <h4 class="text-lg font-semibold mb-3">7.1 Ordentliche Kündigung</h4>
+                        <p class="mb-4">Der Vertrag kann von beiden Seiten mit einer Frist von drei Monaten zum Monatsende gekündigt werden.</p>
+                        
+                        <h4 class="text-lg font-semibold mb-3">7.2 Außerordentliche Kündigung</h4>
+                        <p class="mb-4">Eine außerordentliche Kündigung ist bei wichtigem Grund möglich, insbesondere bei:</p>
+                        <ul class="list-disc list-inside mb-4 space-y-2">
+                            <li>Zahlungsverzug von mehr als zwei Monaten</li>
+                            <li>Schwerwiegenden Verstößen gegen die Hausordnung</li>
+                            <li>Gefährdung anderer Bewohner oder des Personals</li>
+                        </ul>
+                        
+                        <h3 class="text-xl font-semibold mb-4 mt-8">§ 8 Haftung</h3>
+                        <p class="mb-4">Der Betreiber haftet nur für Schäden, die auf Vorsatz oder grober Fahrlässigkeit beruhen. Die Haftung für leichte Fahrlässigkeit ist ausgeschlossen, soweit nicht Schäden aus der Verletzung des Lebens, des Körpers oder der Gesundheit oder aus der Verletzung wesentlicher Vertragspflichten resultieren.</p>
+                        
+                        <h3 class="text-xl font-semibold mb-4 mt-8">§ 9 Datenschutz</h3>
+                        <p class="mb-4">Der Betreiber verpflichtet sich, alle personenbezogenen Daten des Bewohners gemäß den geltenden Datenschutzbestimmungen zu behandeln. Nähere Informationen enthält die Datenschutzerklärung.</p>
+                        
+                        <h3 class="text-xl font-semibold mb-4 mt-8">§ 10 Schlussbestimmungen</h3>
+                        <p class="mb-4">Sollten einzelne Bestimmungen dieser AGB unwirksam sein, bleibt die Wirksamkeit der übrigen Bestimmungen unberührt. Änderungen und Ergänzungen bedürfen der Schriftform.</p>
+                        
+                        <p class="mb-4">Es gilt deutsches Recht. Gerichtsstand ist Hamburg.</p>
+                        
+                        <div class="mt-8 p-4 bg-gray-100 rounded-lg">
+                            <p class="text-sm text-gray-600">
+                                <strong>Stand:</strong> Januar 2024<br>
+                                <strong>Seniorenzentrum Huzur GmbH</strong><br>
+                                Dr. Mustafa Yoldas, Geschäftsführer
+                            </p>
+                        </div>
+                    `
+                }
+            };
+            
+            const data = legalData[type];
+            title.textContent = data.title;
+            content.innerHTML = data.content;
+            
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLegalModal() {
+            const modal = document.getElementById('legalModal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close legal modal when clicking outside
+        document.getElementById('legalModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeLegalModal();
+            }
+        });
+
+        // Close legal modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLegalModal();
+            }
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9659072dd0aee51e',t:'MTc1MzU4NjcxMC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
